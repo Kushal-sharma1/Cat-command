@@ -57,7 +57,7 @@ if(option.includes("-s")){
 if(option.length >1 &&option[1]=="-n"){
 let num=1;
 for(let i=0;i<contentarr.length;i++){
-    contentarr[i]=num+contentarr[i];
+    contentarr[i]=num+" "+contentarr[i];
     num++;
 }
 console.table(contentarr);
@@ -65,11 +65,15 @@ console.table(contentarr);
     let num=1;
     for(let i=0;i<contentarr.length;i++){
         if(contentarr[i]!=""){
-            contentarr[i]=num+contentarr[i];
+            contentarr[i]=num+" "+contentarr[i];
             num++;
         }
     }
     console.table(contentarr);  
 }
 
-let finalcontent=
+let finalcontent="";
+for(let i=0;i<contentarr.length;i++){
+    finalcontent+=(contentarr[i]+"\n");
+}
+console.log(finalcontent);
